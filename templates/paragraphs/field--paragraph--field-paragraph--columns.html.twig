@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Template to provide expert HTML for the field.
+ *
+ * Available variables:
+ * - element: The field element.
+ * - label: The label of the field.
+ * - settings: The settings for the field.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ */
+#}
+
+{% if items|length == 1 %}
+  {% set col_class = "col-12" %}
+{% elseif items|length == "2" %}
+  {% set col_class = "col-md-6" %}
+{% elseif items|length == "3" %}
+  {% set col_class = "col-lg-4" %}
+{% elseif items|length == "4" %}
+  {% set col_class = "col-md-6 col-lg-3" %}
+{% endif %}
+
+<div class="field--split-text-columns">
+  <div class="row equal-heights">
+    {% for item in items %}
+      <div class="col {{ col_class }}">
+        {{- item.content -}}
+      </div>
+    {% endfor %}
+  </div>
+</div>

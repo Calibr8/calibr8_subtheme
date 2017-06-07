@@ -1,0 +1,65 @@
+
+// Region: Header
+// --------------------------------------------------
+
+.region--header {
+  background: $color-white;
+  border-bottom: $default-border;
+  box-shadow: 0 3px 0 3px rgba($color-black, 0.03);
+  margin-bottom: $default-block-margin-bottom;
+}
+.region-header-inner {
+  padding: 0.5rem 0;
+  @include bp(md) {
+    padding: 2rem 0;
+  }
+}
+
+// Branding
+
+.branding {
+  float: left;
+  .site-name {
+    display: none;
+  }
+  .site-slogan {
+    display: none;
+  }
+  .site-logo {
+    transition: all $default-transition;
+    img {
+      display: block;
+      width: 32px;
+      height: 32px;
+    }
+    @include bp(md) {
+      img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+  a:hover {
+    .site-logo {
+      opacity: 0.7;
+    }
+  }
+}
+
+// Blocks
+
+.region--header {
+
+}
+
+// Mobile anchor
+
+.region--header {
+  #mobile-menu-anchor {
+    position: absolute;
+    right: $gutter;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-black;
+  }
+}

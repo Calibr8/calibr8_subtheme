@@ -1,0 +1,80 @@
+
+// Settings
+// --------------------------------------------------
+
+@import '../../../calibr8_theme/sass/config/settings';
+@import 'breakpoints.scss';
+
+// Fonts
+
+// $font-path:         '../fonts/';
+// $icon-font:         'icons';
+$default-font:      'Lato', sans-serif;
+$title-font:        'Lato', sans-serif;
+
+// Font sizes
+
+// $default-font-size:   16;
+// $icon-font-size:      18;
+// $line-height-factor:  1.5;
+
+// Grid
+
+// $grid-columns:        12;
+// $max-site-width:      1600px;
+// $gutter:        			 16px;
+// $default-block-margin-bottom: 3rem;
+
+// Breakpoints
+
+$sm-width: bp-extract($sm) + 'px';
+$md-width: bp-extract($md) + 'px';
+$lg-width: bp-extract($lg) + 'px';
+$xl-width: bp-extract($xl) + 'px';
+
+// Colors
+
+// $color-primary:     #85c441; // main brand color
+// $color-secondary:   #bacec7; // secondary brand color
+// $color-background:  #f1f1f1; // page background
+
+// $color-white:       #ffffff;
+// $color-black:       #021710;
+// $color-grey:        #dddddd; // grey backgrounds like inactive tabs etc.
+
+// $color-text:        #392d02; // default text color
+// $color-muted:       #888888; // muted text like descriptions etc.
+// $color-link:        #1eaedb;
+// $color-link-hover:  lighten($color-link, 10%);
+
+// $color-status:      #1bb761; // status messages
+// $color-warning:     #ffa956; // warning messages
+// $color-error:       #f14d51; // error messages
+
+// $color-border:      #e1e1e1; // default border color,
+// $color-form-border: $color-border; // border color for input elements
+
+// $color-social-facebook:     #3b5998;
+// $color-social-twitter:      #55acee;
+// $color-social-linkedin:     #007bb5;
+// $color-social-googleplus:   #dd4b39;
+// $color-social-youtube:      #bb0000;
+// $color-social-instagram:    #e95950;
+// $color-social-reddit:       #ff4500;
+// $color-social-mail:         #666666;
+// $color-social-rss:          #ff9900;
+
+// Borders
+
+// $default-border:    solid 1px $color-border;
+// $default-border-radius:  4px;
+
+// Transition
+// More examples at http://easings.net/
+
+// $easeIn:                    cubic-bezier(0.55, 0.055, 0.675, 0.19);
+// $easeOut:                   cubic-bezier(0.215, 0.61, 0.355, 1);
+// $easeInOut:                 cubic-bezier(0.645, 0.045, 0.355, 1);
+
+// $default-transition-time:   0.4s;
+// $default-transition:        $easeOut $default-transition-time;

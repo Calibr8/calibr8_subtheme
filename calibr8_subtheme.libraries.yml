@@ -1,0 +1,14 @@
+main:
+  version: 1.x
+  css:
+    theme:
+      css/styles.css: { weight: 97 }
+      css/print.css: { media: print, weight: 100 }
+  js:
+    js/scripts.min.js: {}
+    js/modernizr-custom.min.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings

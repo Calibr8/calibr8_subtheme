@@ -1,0 +1,290 @@
+
+// PARAGRAPHS: GLOBALS
+// --------------------------------------------------
+
+$paragraph-spacing-sm: 2rem;
+$paragraph-spacing-md: 3rem;
+
+.paragraph {
+  position: relative;
+  padding-top: $paragraph-spacing-sm;
+  padding-bottom: $paragraph-spacing-sm;
+  @include bp(md) {
+    padding-top: $paragraph-spacing-md;
+    padding-bottom: $paragraph-spacing-md;
+  }
+}
+
+// Fields
+// --------------------------------------------------
+
+// Body
+.paragraph {
+  .field--type-text-long {
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Call to action
+.paragraph {
+  .field--call-to-action {
+    margin-top: 1.5rem;
+  }
+}
+
+// Regions
+// --------------------------------------------------
+
+// Header
+.paragraph {
+  > .inner > header {
+    margin-bottom: 2rem;
+  }
+}
+
+// Style variants
+// --------------------------------------------------
+
+// Width
+.paragraph.width--small {
+  > .inner {
+    @include bp(md) {
+      margin: auto;
+      padding: 0 ($gutter / 4); // mysterious fix
+      max-width: cols-width(8);
+    }
+    @include bp(lg) {
+      // width: cols-width(8);
+    }
+    @include bp(xl) {
+      max-width: cols-width(6);
+    }
+  }
+}
+.paragraph.width--medium {
+  > .inner {
+    @include bp(md) {
+      margin: auto;
+      padding: 0 ($gutter / 4); // mysterious fix
+      max-width: cols-width(10);
+    }
+    @include bp(lg) {
+      max-width: cols-width(8);
+    }
+  }
+}
+.paragraph.width--large {
+  > .inner {
+    @include bp(lg) {
+      margin: auto;
+      padding: 0 ($gutter / 4); // mysterious fix
+      width: cols-width(10);
+    }
+  }
+}
+.paragraph.width--full {
+
+}
+
+// Background color
+.paragraph.background--grey {
+  @extend .extendfull;
+  background-color: $color-grey;
+}
+.paragraph.background--primary {
+  @extend .extendfull;
+  background-color: $color-primary;
+}
+.paragraph.background--secondary {
+  @extend .extendfull;
+  background-color: $color-secondary;
+}
+
+// Border
+.paragraph.border--top {
+  @extend .extendfull;
+  border-top: $default-border;
+}
+.paragraph.border--bottom {
+  @extend .extendfull;
+  border-bottom: $default-border;
+}
+
+// Title align
+.paragraph.title-align--left {
+
+}
+.paragraph.title-align--center {
+  .field--title,
+  .field--subtitle {
+    text-align: center;
+  }
+  .node .field--title,
+  .node .field--subtitle {
+    text-align: inherit;
+  }
+}
+.paragraph.title-align--right {
+  .field--title,
+  .field--subtitle {
+    text-align: right;
+  }
+  .node .field--title,
+  .node .field--subtitle {
+    text-align: inherit;
+  }
+}
+
+// Text align
+.paragraph.text-align--left {
+
+}
+.paragraph.text-align--center {
+  .field--text,
+  .field--call-to-action {
+    text-align: center;
+  }
+}
+.paragraph.text-align--right {
+  .field--text,
+  .field--call-to-action {
+    text-align: right;
+  }
+}
+
+// text color
+.paragraph.text-color--white {
+  .content-inner {
+    color: $color-white;
+  }
+}
+
+// text background
+.paragraph.text-background--white {
+  .content-inner {
+    background-color: $color-white;
+  }
+}
+.paragraph.text-background--white-transparent {
+  .content-inner {
+    background-color: rgba($color-white, 0.5);
+  }
+}
+.paragraph.text-background--black {
+  .content-inner {
+    background-color: $color-black;
+  }
+}
+.paragraph.text-background--black-transparent {
+  .content-inner {
+    background-color: rgba($color-black, 0.5);
+  }
+}
+
+// Spacing and border fixes
+// --------------------------------------------------
+
+// Avoid double borders
+.paragraph.border--bottom + .paragraph.border--top {
+  border-top: 0 none;
+}
+
+// Avoid double paddings
+.paragraph.background--default:not(.paragraph--text-with-background-image):not(.border--bottom) + .paragraph.background--default:not(.border--top),
+.paragraph.background--primary:not(.paragraph--text-with-background-image):not(.border--bottom) + .paragraph.background--primary:not(.border--top),
+.paragraph.background--secondary:not(.paragraph--text-with-background-image):not(.border--bottom) + .paragraph.background--secondary:not(.border--top),
+.paragraph.background--grey:not(.paragraph--text-with-background-image):not(.border--bottom) + .paragraph.background--grey:not(.border--top) {
+  padding-top: 0;
+}
+
+// PARAGRAPH STYLE: Text with image
+// --------------------------------------------------
+.paragraph--text-with-image {
+  .field--image {
+    @include bp(md) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// PARAGRAPH STYLE: Text with background image
+// --------------------------------------------------
+.paragraph--text-with-background-image {
+  padding-top: 0;
+  padding-bottom: 0;
+  > .inner {
+    position: relative;
+    max-width: $max-site-width;
+  }
+  .field--image {
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  .content-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    @include bp(md) {
+      padding: 0 ($gutter / 4); // mysterious fix
+      width: cols-width(8);
+    }
+    @include bp(lg) {
+      padding: 0 ($gutter / 4); // mysterious fix
+      width: cols-width(6);
+    }
+  }
+  .content-inner {
+    padding: 1rem;
+  }
+  h1.field--title {
+    margin-bottom: 1rem;
+  }
+}
+.paragraph--text-with-background-image--content-align-center {
+  .content-wrapper {
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+.paragraph--text-with-background-image--content-align-right {
+  .content-wrapper {
+    left: auto;
+    right: 0;
+  }
+}
+
+// PARAGRAPH STYLE: Form
+// --------------------------------------------------
+.paragraph--form {
+
+}
+
+// PARAGRAPH STYLE: Columns
+// --------------------------------------------------
+.paragraph--columns {
+  .paragraph {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .col:not(:last-child) /* .paragraph */ {
+    @include bp(md, max) {
+      margin-bottom: 2rem;
+    }
+  }
+  .field--call-to-action {
+    .field__item,
+    .button {
+      width: 100%;
+    }
+  }
+  .paragraph--text-with-image-teaser {
+    @include bp(md) {
+      margin-bottom: 0 !important;
+    }
+  }
+}

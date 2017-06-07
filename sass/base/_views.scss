@@ -1,0 +1,34 @@
+
+// Views
+// --------------------------------------------------
+
+// Header
+
+.view-header {
+  margin-bottom: $default-block-margin-bottom;
+}
+
+// Footer
+
+.view .more-link {
+  a {
+    @extend .read-more;
+  }
+}
+
+// Content
+.view-content {
+  @include clearfix();
+}
+
+// Empty view
+
+.view-empty {
+  @extend .messages;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+// Exposed filters
+// --------------------------------------------------

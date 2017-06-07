@@ -1,0 +1,108 @@
+
+// Node
+// --------------------------------------------------
+
+.node {
+  position: relative;
+}
+
+.node--onclick {
+  cursor: pointer;
+  &,
+  .field--title,
+  .field--subtitle {
+    transition: color $default-transition;
+  }
+  &:hover {
+    &,
+    .field--title,
+    .field--subtitle {
+      color: $color-link;
+    }
+  }
+}
+
+// Labels
+// --------------------------------------------------
+
+label.field-label,
+div.field-label,
+span.field-label {
+  @extend label;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.label-inline {
+  @extend label;
+  label.field-label,
+  div.field-label,
+  span.field-label,
+  div.field-content {
+    display: inline-block;
+  }
+}
+
+
+// Fields
+// --------------------------------------------------
+
+.field--title + .field--subtitle {
+  margin-top: -1rem;
+}
+
+.field--date {
+  @include font-size(14);
+  color: $color-muted;
+  @include icon('time') {
+    margin-right: 0.5rem;
+  }
+}
+
+.field--body {
+  a {
+    @extend .inline-link;
+  }
+}
+
+.field--node-link {
+  a {
+    @extend .read-more;
+  }
+}
+
+.field--more-link {
+  a {
+    @extend .read-more;
+  }
+}
+
+// Field groups
+// --------------------------------------------------
+
+
+// View modes
+// --------------------------------------------------
+
+// List
+
+.node--list {
+  margin-bottom: $default-block-margin-bottom;
+}
+
+// Search result
+
+.node--search-result {
+  margin-bottom: $default-block-margin-bottom;
+}
+
+// Teaser
+
+.node--teaser {
+  margin-bottom: $default-block-margin-bottom;
+}
+
+// Full
+
+.node--full {
+  margin-bottom: $default-block-margin-bottom;
+}

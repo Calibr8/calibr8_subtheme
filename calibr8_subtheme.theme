@@ -1,0 +1,217 @@
+<?php
+/**
+ * @file
+ * template.php
+ */
+
+use Drupal\Core\PhpStorage\PhpStorageFactory;
+use Drupal\Core\Entity;
+use Drupal\Core\Menu;
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function calibr8_subtheme_theme_registry_alter(&$registry) {
+  // Add bookmark icons to cache
+  $registry['html']['bookmark-icons'] = _calibr8_bookmark_icons('calibr8_subtheme');
+}
+
+/**
+ * Implements hook_page_attachments_alter()
+ */
+function calibr8_subtheme_page_attachments_alter(&$page) {
+  // Add breakpoints to base theme as well.
+  $page['#attached']['drupalSettings']['calibr8']['breakpoints'] = _calibr8_media_queries('calibr8_subtheme');
+  $page['#attached']['drupalSettings']['calibr8_subtheme']['breakpoints'] = _calibr8_media_queries('calibr8_subtheme');
+}
+
+/**
+* Implements hook_preprocess_html().
+*/
+function calibr8_subtheme_preprocess_html(&$variables) {
+  // ksm('calibr8_subtheme_preprocess_html');
+}
+
+/**
+* Implements hook_preprocess_page().
+*/
+function calibr8_subtheme_preprocess_page(&$variables) {
+  // ksm('calibr8_subtheme_preprocess_page');
+}
+
+/**
+* Implements hook_preprocess_block().
+*/
+function calibr8_subtheme_preprocess_block(&$variables) {
+  // ksm('calibr8_subtheme_preprocess_block');
+}
+
+/**
+* Implements hook_preprocess_node().
+* When using display suite this is called from calibr8_ds.module
+*/
+function calibr8_subtheme_preprocess_node(&$variables) {
+  // ksm('calibr8_subtheme_preprocess_node');
+
+  if(isset($variables['content']['#node'])) {
+    $node = $variables['content']['#node'];
+    $type = $node->getType();
+    $view_mode = $variables['content']['#view_mode'];
+
+    // Hide page title
+    $variables['hide_page_title'] = FALSE;
+    if($variables['content']['#view_mode'] == 'full' && $node->hasField('field_hide_page_title')) {
+      $field_hide_page_title = $node->get('field_hide_page_title')->getValue();
+      $field_hide_page_title = reset($field_hide_page_title);
+      if($field_hide_page_title['value'] == 1) {
+        $variables['hide_page_title'] = TRUE;
+      }
+    }
+  }
+
+}
+
+/**
+* Implements hook_preprocess_paragraph().
+* When using display suite this is called from calibr8_ds.module
+*/
+function calibr8_subtheme_preprocess_paragraph(&$variables) {
+  // ksm('calibr8_subtheme_preprocess_paragraph');
+
+  if(isset( $variables['elements'])) {
+    // display suite
+    $entity = $variables['elements']['#paragraph'];
+  } else {
+    // drupal default
+    $entity = $variables['content']['#paragraph'];
+  }
+
+  if(isset($entity) && $entity) {
+
+    // check if class array exists
+    if(!isset($variables['attributes'])) {
+      $variables['attributes'] = array();
+    }
+    if(!isset($variables['attributes']['class'])) {
+      $variables['attributes']['class'] = array();
+    }
+
+    $css_entity_type = _calibr8_clean_css_identifier($entity->getType());
+    if(isset($variables['content']) && isset($variables['content']['#view_mode'])) {
+      $css_view_mode = _calibr8_clean_css_identifier($variables['content']['#view_mode']);
+    } else {
+      $css_view_mode = "default";
+    }
+
+    // Change modifier classes to use BEM syntax.
+    $variables['attributes']['class'] = preg_replace('/^paragraph--type-' . $css_entity_type . '$/', 'paragraph--' . $css_entity_type, $variables['attributes']['class']);
+    $variables['attributes']['class'] = preg_replace('/^paragraph--view-mode-' . $css_view_mode . '$/', 'paragraph--' . $css_view_mode, $variables['attributes']['class']);
+
+    // Add modifier classes for view mode.
+    $variables['attributes']['class'][] = 'paragraph--' . $css_entity_type . '--' . $css_view_mode;
+
+    // paragraph width select field - add class
+    if($entity->hasField('field_paragraph_width')) {
+      $field_paragraph_width = $entity->get('field_paragraph_width')->getValue();
+      $field_paragraph_width = reset($field_paragraph_width);
+      if($field_paragraph_width) {
+        $variables['attributes']['class'][] = 'width--' . reset($field_paragraph_width);
+      }
+    }
+
+    // background color select field - add class
+    if($entity->hasField('field_background')) {
+      $field_element_style = $entity->get('field_background')->getValue();
+      $field_element_style = reset($field_element_style);
+      if($field_element_style) {
+        $variables['attributes']['class'][] = 'background--' . reset($field_element_style);
+      } else {
+        $variables['attributes']['class'][] = 'background--default';
+      }
+    } else {
+      $variables['attributes']['class'][] = 'background--default';
+    }
+
+    // border select field - add class
+    if($entity->hasField('field_border')) {
+      $field_element_style = $entity->get('field_border')->getValue();
+      $field_element_style = reset($field_element_style);
+      if($field_element_style && isset($field_element_style['value'])) {
+        if($field_element_style['value'] == 'top') {
+          $variables['attributes']['class'][] = 'border--top';
+        }
+        if($field_element_style['value'] == 'bottom') {
+          $variables['attributes']['class'][] = 'border--bottom';
+        }
+        if($field_element_style['value'] == 'top-bottom') {
+          $variables['attributes']['class'][] = 'border--top';
+          $variables['attributes']['class'][] = 'border--bottom';
+        }
+      } else {
+        $variables['attributes']['class'][] = 'border--default';
+      }
+    } else {
+      $variables['attributes']['class'][] = 'border--default';
+    }
+
+    // title align select field - add class
+    if($entity->hasField('field_title_align')) {
+      $field_title_align = $entity->get('field_title_align')->getValue();
+      $field_title_align = reset($field_title_align);
+      if($field_title_align) {
+        $variables['attributes']['class'][] = 'title-align--' . reset($field_title_align);
+      }
+    }
+
+    // text align select field - add class
+    if($entity->hasField('field_text_align')) {
+      $field_text_align = $entity->get('field_text_align')->getValue();
+      $field_text_align = reset($field_text_align);
+      if($field_text_align) {
+        $variables['attributes']['class'][] = 'text-align--' . reset($field_text_align);
+      }
+    }
+
+    // text color
+    if($entity->hasField('field_text_color')) {
+      $field_text_align = $entity->get('field_text_color')->getValue();
+      $field_text_align = reset($field_text_align);
+      if($field_text_align) {
+        $variables['attributes']['class'][] = 'text-color--' . reset($field_text_align);
+      }
+    }
+
+    // text background
+    if($entity->hasField('field_text_background')) {
+      $field_text_align = $entity->get('field_text_background')->getValue();
+      $field_text_align = reset($field_text_align);
+      if($field_text_align) {
+        $variables['attributes']['class'][] = 'text-background--' . reset($field_text_align);
+      }
+    }
+
+  }
+
+}
+
+/**
+* Implements hook_preprocess_user().
+* When using display suite this is called from calibr8_ds.module
+*/
+function calibr8_subtheme_preprocess_user(&$variables) {
+  // ksm('calibr8_subtheme_preprocess_user');
+}
+
+/**
+* Implements hook_preprocess_field().
+*/
+function calibr8_subtheme_preprocess_field(&$variables) {
+  // ksm('calibr8_subtheme_preprocess_field');
+}
+
+/**
+ * Implements hook_calibr8_styleguide_items().
+ */
+function calibr8_subtheme_calibr8_styleguide_items(&$items) {
+  // ksm('calibr8_subtheme_calibr8_styleguide_items');
+}

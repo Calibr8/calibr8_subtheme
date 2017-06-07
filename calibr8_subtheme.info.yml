@@ -1,0 +1,31 @@
+name: Calibr8 Subtheme
+description: 'Calibrate powered theme.'
+type: theme
+package: Calibrate
+base theme: calibr8_theme
+core: 8.x
+
+libraries:
+  - calibr8_subtheme/main
+
+ckeditor_stylesheets:
+  - css/wysiwyg.css
+
+regions:
+  toolbar: 'Toolbar'
+  branding: 'Branding'
+  header: 'Header'
+  navigation: 'Navigation'
+  help: 'Help'
+  highlighted: 'Highlighted'
+  full_width: 'Full width'
+  content_top: 'Content top'
+  content: 'Content'
+  content_bottom: 'Content bottom'
+  sidebar_left: 'Sidebar left'
+  sidebar_right: 'Sidebar right'
+  footer: 'Footer'
+  mobile_menu: 'Mobile menu'
+
+stylesheets-remove:
+  - '@classy/css/components/file.css'

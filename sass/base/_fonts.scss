@@ -1,0 +1,28 @@
+
+// Fonts
+// --------------------------------------------------
+
+@import '../../../calibr8_theme/sass/base/fonts';
+
+// Font weights; more info at https://www.w3.org/TR/css-fonts-3/
+// 100 - Thin
+// 200 - Extra Light (Ultra Light)
+// 300 - Light
+// 400 - Normal
+// 500 - Medium
+// 600 - Semi Bold (Demi Bold)
+// 700 - Bold
+// 800 - Extra Bold (Ultra Bold)
+// 900 - Black (Heavy)
+
+// ICON FONT
+@include font-face('icons', normal, normal, 'icons');
+
+// FROM GOOGLE FONTS
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,200,300,500,600,700,800,900);
+
+// CUSTOM FONT EXAMPLE
+
+// Regular 400
+// @include font-face('MyCustomFont',   400, normal, 'mycustomfont-regular');
+// @include font-face('MyCustomFont',   400, italic, 'mycustomfont-regularitalic');

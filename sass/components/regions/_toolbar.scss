@@ -1,0 +1,12 @@
+
+// Region: Toolbar
+// --------------------------------------------------
+
+.region--toolbar {
+  padding: 0.2rem 0;
+  background-color: $color-black;
+  color: $color-white;
+  .block {
+    margin: 0;
+  }
+}

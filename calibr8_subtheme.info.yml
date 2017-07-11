@@ -1,9 +1,10 @@
 name: Calibr8 Subtheme
-description: 'Calibrate powered theme.'
+description: Calibrate powered theme.
 type: theme
 package: Calibrate
 base theme: calibr8_theme
 core: 8.x
+version: '8.x-1.0'
 
 libraries:
   - calibr8_subtheme/main

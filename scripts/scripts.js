@@ -7,14 +7,27 @@
 
   'use strict';
 
-  var options = $.extend({
-    breakpoints: {
-      'sm': drupalSettings.calibr8_subtheme.breakpoints['sm'],
-      'md': drupalSettings.calibr8_subtheme.breakpoints['md'],
-      'lg': drupalSettings.calibr8_subtheme.breakpoints['lg'],
-      'xl': drupalSettings.calibr8_subtheme.breakpoints['xl']
+  var options = {};
+  if(drupalSettings.calibr8_subtheme != undefined) {
+    var options = $.extend({
+      breakpoints: {
+        'sm': drupalSettings.calibr8_subtheme.breakpoints['sm'],
+        'md': drupalSettings.calibr8_subtheme.breakpoints['md'],
+        'lg': drupalSettings.calibr8_subtheme.breakpoints['lg'],
+        'xl': drupalSettings.calibr8_subtheme.breakpoints['xl']
+      }
+    }, drupalSettings.calibr8);
+  } else {
+    // default breakpoints
+    var options = {
+      breakpoints: {
+        'sm': 'screen and (min-width: 392px)',
+        'md': 'screen and (min-width: 692px)',
+        'lg': 'screen and (min-width: 992px)',
+        'xl': 'screen and (min-width: 992px)'
+      }
     }
-  }, drupalSettings.calibr8);
+  }
 
   // Extract the pixel value from the breakpoint
   function bpExtract($bp) {

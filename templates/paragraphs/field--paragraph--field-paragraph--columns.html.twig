@@ -23,7 +23,7 @@
   {% set col_class = "col-md-6 col-lg-3" %}
 {% endif %}
 
-<div class="field--split-text-columns">
+<div {{ attributes.addClass("field--split-text-columns") }}>
   <div class="row equal-heights">
     {% for item in items %}
       <div class="col {{ col_class }}">

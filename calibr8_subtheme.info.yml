@@ -4,7 +4,7 @@ type: theme
 package: Calibrate
 base theme: calibr8_theme
 core: 8.x
-version: '8.x-1.1'
+version: '8.x-1.2.0'
 
 libraries:
   - calibr8_subtheme/main

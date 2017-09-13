@@ -66,6 +66,7 @@
 .icon-social-mail:before,
 .icon-social-reddit:before,
 .icon-social-twitter:before,
+.icon-social-youtube:before,
 .icon-star-fill:before,
 .icon-star-half:before,
 .icon-star:before,
@@ -301,68 +302,72 @@
 	content: "\E033";
 }
 
-.icon-star-fill:before {
+.icon-social-youtube:before {
 	content: "\E034";
 }
 
-.icon-star-half:before {
+.icon-star-fill:before {
 	content: "\E035";
 }
 
-.icon-star:before {
+.icon-star-half:before {
 	content: "\E036";
 }
 
-.icon-stats:before {
+.icon-star:before {
 	content: "\E037";
 }
 
-.icon-status-error:before {
+.icon-stats:before {
 	content: "\E038";
 }
 
-.icon-status-help:before {
+.icon-status-error:before {
 	content: "\E039";
 }
 
-.icon-status-info:before {
+.icon-status-help:before {
 	content: "\E03A";
 }
 
-.icon-status-warning:before {
+.icon-status-info:before {
 	content: "\E03B";
 }
 
-.icon-tag:before {
+.icon-status-warning:before {
 	content: "\E03C";
 }
 
-.icon-time:before {
+.icon-tag:before {
 	content: "\E03D";
 }
 
-.icon-trash:before {
+.icon-time:before {
 	content: "\E03E";
 }
 
-.icon-triangle-down:before {
+.icon-trash:before {
 	content: "\E03F";
 }
 
-.icon-triangle-left:before {
+.icon-triangle-down:before {
 	content: "\E040";
 }
 
-.icon-triangle-right:before {
+.icon-triangle-left:before {
 	content: "\E041";
 }
 
-.icon-triangle-up:before {
+.icon-triangle-right:before {
 	content: "\E042";
 }
 
-.icon-user:before {
+.icon-triangle-up:before {
 	content: "\E043";
+}
+
+.icon-user:before {
+	content: "\E044";
 }
 
 

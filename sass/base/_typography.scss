@@ -304,10 +304,13 @@ ul.list-minus {
 table {
   max-width: 100%;
   border-collapse: collapse;
+}
+table.responsive {
+  display: block;
   overflow-x: auto;
   overflow-y: hidden;
-  display: block;
 }
+
 table.full-width {
   width: 100%;
 }

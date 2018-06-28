@@ -1,4 +1,3 @@
-
 // PARAGRAPHS: GLOBALS
 // --------------------------------------------------
 
@@ -14,7 +13,6 @@ $paragraph-spacing-md: 3rem;
     padding-bottom: $paragraph-spacing-md;
   }
 }
-
 // Fields
 // --------------------------------------------------
 
@@ -26,14 +24,12 @@ $paragraph-spacing-md: 3rem;
     }
   }
 }
-
 // Call to action
 .paragraph {
   .field--call-to-action {
     margin-top: 1.5rem;
   }
 }
-
 // Regions
 // --------------------------------------------------
 
@@ -43,7 +39,6 @@ $paragraph-spacing-md: 3rem;
     margin-bottom: 2rem;
   }
 }
-
 // Style variants
 // --------------------------------------------------
 
@@ -85,9 +80,7 @@ $paragraph-spacing-md: 3rem;
   }
 }
 .paragraph.width--full {
-
 }
-
 // Background color
 .paragraph.background--grey {
   @extend .extendfull;
@@ -101,7 +94,6 @@ $paragraph-spacing-md: 3rem;
   @extend .extendfull;
   background-color: $color-secondary;
 }
-
 // Border
 .paragraph.border--top {
   @extend .extendfull;
@@ -111,10 +103,8 @@ $paragraph-spacing-md: 3rem;
   @extend .extendfull;
   border-bottom: $default-border;
 }
-
 // Title align
 .paragraph.title-align--left {
-
 }
 .paragraph.title-align--center {
   .field--title,
@@ -136,10 +126,8 @@ $paragraph-spacing-md: 3rem;
     text-align: inherit;
   }
 }
-
 // Text align
 .paragraph.text-align--left {
-
 }
 .paragraph.text-align--center {
   .field--text,
@@ -153,14 +141,12 @@ $paragraph-spacing-md: 3rem;
     text-align: right;
   }
 }
-
 // text color
 .paragraph.text-color--white {
   .content-inner {
     color: $color-white;
   }
 }
-
 // text background
 .paragraph.text-background--white {
   .content-inner {
@@ -182,7 +168,6 @@ $paragraph-spacing-md: 3rem;
     background-color: rgba($color-black, 0.5);
   }
 }
-
 // Spacing and border fixes
 // --------------------------------------------------
 
@@ -190,7 +175,6 @@ $paragraph-spacing-md: 3rem;
 .paragraph.border--bottom + .paragraph.border--top {
   border-top: 0 none;
 }
-
 // Avoid double paddings
 .paragraph.background--default:not(.paragraph--text-with-background-image):not(.border--bottom) + .paragraph.background--default:not(.border--top),
 .paragraph.background--primary:not(.paragraph--text-with-background-image):not(.border--bottom) + .paragraph.background--primary:not(.border--top),
@@ -198,7 +182,6 @@ $paragraph-spacing-md: 3rem;
 .paragraph.background--grey:not(.paragraph--text-with-background-image):not(.border--bottom) + .paragraph.background--grey:not(.border--top) {
   padding-top: 0;
 }
-
 // PARAGRAPH STYLE: Text with image
 // --------------------------------------------------
 .paragraph--text-with-image {
@@ -208,7 +191,6 @@ $paragraph-spacing-md: 3rem;
     }
   }
 }
-
 // PARAGRAPH STYLE: Text with background image
 // --------------------------------------------------
 .paragraph--text-with-background-image {
@@ -257,13 +239,10 @@ $paragraph-spacing-md: 3rem;
     right: 0;
   }
 }
-
 // PARAGRAPH STYLE: Form
 // --------------------------------------------------
 .paragraph--form {
-
 }
-
 // PARAGRAPH STYLE: Columns
 // --------------------------------------------------
 .paragraph--columns {
@@ -271,7 +250,8 @@ $paragraph-spacing-md: 3rem;
     padding-top: 0;
     padding-bottom: 0;
   }
-  .col:not(:last-child) /* .paragraph */ {
+  .col:not(:last-child) /* .paragraph */
+  {
     @include bp(md, max) {
       margin-bottom: 2rem;
     }

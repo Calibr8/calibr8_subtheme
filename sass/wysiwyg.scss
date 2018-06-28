@@ -1,9 +1,6 @@
-
 // WYSIWYG
 // --------------------------------------------------
-
 // CONFIG
-
 @import 'config/mixins';
 @import 'config/settings';
 
@@ -18,7 +15,6 @@ body {
   font-variant-ligatures: none; // turn off ligatures
   @include font-size($default-font-size);
 }
-
 // BASE
 
 @import 'base/fonts';

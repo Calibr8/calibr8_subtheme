@@ -1,13 +1,9 @@
-
 // Forms
 // --------------------------------------------------
-
 @import '../../../calibr8_theme/sass/base/forms';
-
 
 // Submit button
 
 input.form-submit {
   @extend .button-primary;
-  // @extend .button-large;
 }

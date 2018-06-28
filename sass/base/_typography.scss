@@ -1,7 +1,5 @@
-
 // Typography
 // --------------------------------------------------
-
 @import '../../../calibr8_theme/sass/base/typography';
 
 // Spacing
@@ -9,7 +7,6 @@
 pre, blockquote, dl, figure, table, p, ul, ol, form {
   margin-bottom: 1.5rem;
 }
-
 // Headings
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,7 +18,6 @@ h1, h2, h3, h4, h5, h6 {
     color: inherit;
   }
 }
-
 h1 {
   @include font-size(24);
   margin-bottom: 2rem;
@@ -32,7 +28,6 @@ h1 {
     @include font-size(48);
   }
 }
-
 h2 {
   @include font-size(24);
   font-weight: 600;
@@ -43,7 +38,6 @@ h2 {
     @include font-size(36);
   }
 }
-
 h3 {
   @include font-size(18);
   font-weight: 500;
@@ -54,7 +48,6 @@ h3 {
     @include font-size(24);
   }
 }
-
 h4 {
   @include font-size(16);
   font-weight: 500;
@@ -62,41 +55,33 @@ h4 {
     @include font-size(18);
   }
 }
-
 h5 {
   @include font-size(16);
   font-weight: 500;
 }
-
 h6 {
   @include font-size(16);
   font-weight: 400;
 }
-
 p {
   margin-top: 0;
 }
-
 .lead {
   @include font-size(18);
   font-weight: 600;
   margin-bottom: 2rem;
   max-width: 600px;
 }
-
 .muted {
   color: $color-muted;
 }
-
 .small {
   @include font-size(12);
 }
-
 .description {
   @include font-size(12);
   color: $color-muted;
 }
-
 .caption {
   @include font-size(12);
   color: $color-muted;
@@ -104,7 +89,6 @@ p {
   padding-right: 1rem;
   font-style: italic;
 }
-
 a {
   color: $color-link;
   text-decoration: none;
@@ -114,7 +98,6 @@ a {
     text-decoration: none;
   }
 }
-
 a.inline-link {
   color: $color-text;
   font-weight: 600;
@@ -125,7 +108,6 @@ a.inline-link {
     border-color: $color-link-hover;
   }
 }
-
 p, a {
   &[class^='icon-']:before,
   &[class*=' icon-']:before {
@@ -138,13 +120,11 @@ p, a {
     text-decoration: none;
   }
 }
-
 // Labels
 
 label {
   font-weight: 700;
 }
-
 // Pills
 
 .pill {
@@ -163,7 +143,6 @@ a.pill:hover {
   color: $color-white;
   background-color: $color-link-hover;
 }
-
 .pill-primary {
   color: $color-white;
   background-color: $color-primary;
@@ -178,7 +157,6 @@ a.pill-primary:hover {
 a.pill-secondary:hover {
   background-color: $color-link-hover;
 }
-
 // Description lists
 
 dl {
@@ -222,7 +200,6 @@ dl.dl-horizontal-narrow {
     }
   }
 }
-
 // Read more link
 
 a.read-more {
@@ -235,7 +212,6 @@ a.read-more {
     text-decoration: none;
   }
 }
-
 // Lists
 
 ul,
@@ -247,29 +223,24 @@ ol {
     margin-bottom: 0.5rem;
   }
 }
-
 ul {
   list-style: circle outside;
 }
-
 ol {
   list-style: decimal outside;
 }
-
 ul {
   ul, ol {
     margin: 1.5rem 0 1.5rem 3rem;
     font-size: 90%;
   }
 }
-
 ol {
   ol, ul {
     margin: 1.5rem 0 1.5rem 3rem;
     font-size: 90%;
   }
 }
-
 ul.list-check,
 ul.list-plus,
 ul.list-minus {
@@ -280,25 +251,21 @@ ul.list-minus {
     margin-left: -1.5rem;
   }
 }
-
 ul.list-check {
   li {
     @include icon('check');
   }
 }
-
 ul.list-plus {
   li {
     @include icon('circle-plus');
   }
 }
-
 ul.list-minus {
   li {
     @include icon('circle-minus');
   }
 }
-
 // Tables
 
 table {
@@ -310,27 +277,22 @@ table.responsive {
   overflow-x: auto;
   overflow-y: hidden;
 }
-
 table.full-width {
   width: 100%;
 }
-
 th {
-    font-weight: 600;
+  font-weight: 600;
 }
-
 th, td {
   padding: 0.75rem 1rem;
   text-align: left;
   vertical-align: top;
   border-bottom: $default-border;
 }
-
 table.vline th,
 table.vline td {
   border: $default-border;
 }
-
 table.striped {
   background-color: $color-white;
   tbody > tr:nth-child(odd) > td,
@@ -338,7 +300,6 @@ table.striped {
     background-color: $color-grey;
   }
 }
-
 table.row-links tbody {
   th, td {
     transition: background-color $default-transition, color $default-transition;
@@ -349,11 +310,9 @@ table.row-links tbody {
     cursor: pointer;
   }
 }
-
 table .form-item {
   margin-bottom: 0;
 }
-
 // Blockquote
 
 blockquote {
@@ -378,7 +337,6 @@ blockquote {
     }
   }
 }
-
 // Images
 
 img {
@@ -386,7 +344,6 @@ img {
   height: auto;
   border: 0 none;
 }
-
 .inline-image {
   float: left;
   margin-right: 1rem;
@@ -397,7 +354,6 @@ img {
     margin-left: 1rem;
   }
 }
-
 // Video
 
 .video-container {
@@ -415,7 +371,6 @@ img {
     height: 100%;
   }
 }
-
 // Icons
 
 span[class^="icon-"] {

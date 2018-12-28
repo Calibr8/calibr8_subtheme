@@ -4,6 +4,7 @@
 
 // CONFIG
 
+@import 'config/icons';
 @import 'config/mixins';
 @import 'config/settings';
 
@@ -22,7 +23,6 @@ body {
 // BASE
 
 @import 'base/fonts';
-@import 'base/icons';
 @import 'base/classes';
 
 @import 'base/typography';

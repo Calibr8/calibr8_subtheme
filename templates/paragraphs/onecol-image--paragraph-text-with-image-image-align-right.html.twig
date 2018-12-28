@@ -5,56 +5,55 @@
  */
 #}
 <{{ outer_wrapper }}{{ attributes.addClass('layout--onecol-image', 'clearfix') }}>
-{{ title_suffix.contextual_links }}
+  {{ title_suffix.contextual_links }}
 
   {# pragraphs need this to be printed before the content #}
   {% if icon %}{{ icon }}{% endif %}
-<div class="inner">
+  <div class="inner">
 
   {% if not image_empty %}
-  <div class="row">
-    <{{ image_wrapper }}{{ image_attributes.addClass('image-wrapper').addClass('col col-md-6 col-md-push-6') }}
-    >
-    {{ image }}
-  </{{ image_wrapper }}>
-  <div class="content-wrapper col col-md-6 col-md-pull-6">
-    {% if not header_empty %}
-    <{{ header_wrapper }}{{ header_attributes.addClass('ds-header') }}>
-    {{ header }}
-  </{{ header_wrapper }}>
-  {% endif %}
-  {% if not column_1_empty %}
-  <{{ column_1_wrapper }}{{ column_1_attributes.addClass('ds-content') }}>
-  {{ column_1 }}
-</{{ column_1_wrapper }}>
-  {% endif %}
-        {% if not footer_empty %}
-          <{{ footer_wrapper }}{{ footer_attributes.addClass('ds-footer') }}>
-          {{ footer }}
-          </{{ footer_wrapper }}>
+    <div class="row">
+      <{{ image_wrapper }}{{ image_attributes.addClass('image-wrapper').addClass('col col-md-6 col-md-push-6') }}>
+        {{ image }}
+      </{{ image_wrapper }}>
+      <div class="content-wrapper col col-md-6 col-md-pull-6">
+        {% if not header_empty %}
+        <{{ header_wrapper }}{{ header_attributes.addClass('ds-header') }}>
+          {{ header }}
+        </{{ header_wrapper }}>
         {% endif %}
-  </div>
-  </div>
+        {% if not column_1_empty %}
+        <{{ column_1_wrapper }}{{ column_1_attributes.addClass('ds-content') }}>
+          {{ column_1 }}
+        </{{ column_1_wrapper }}>
+        {% endif %}
+        {% if not footer_empty %}
+        <{{ footer_wrapper }}{{ footer_attributes.addClass('ds-footer') }}>
+          {{ footer }}
+        </{{ footer_wrapper }}>
+        {% endif %}
+      </div>
+    </div>
 
-{% else %}
-  <div class="content-wrapper">
-  {% if not header_empty %}
-    <{{ header_wrapper }}{{ header_attributes.addClass('ds-header') }}>
-    {{ header }}
-    </{{ header_wrapper }}>
-  {% endif %}
-  {% if not column_1_empty %}
-    <{{ column_1_wrapper }}{{ column_1_attributes.addClass('ds-content') }}>
-    {{ column_1 }}
-    </{{ column_1_wrapper }}>
-  {% endif %}
-  {% if not footer_empty %}
-    <{{ footer_wrapper }}{{ footer_attributes.addClass('ds-footer') }}>
-    {{ footer }}
-    </{{ footer_wrapper }}>
-  {% endif %}
-  </div>
+  {% else %}
+    <div class="content-wrapper">
+      {% if not header_empty %}
+      <{{ header_wrapper }}{{ header_attributes.addClass('ds-header') }}>
+        {{ header }}
+      </{{ header_wrapper }}>
+      {% endif %}
+      {% if not column_1_empty %}
+      <{{ column_1_wrapper }}{{ column_1_attributes.addClass('ds-content') }}>
+        {{ column_1 }}
+      </{{ column_1_wrapper }}>
+      {% endif %}
+      {% if not footer_empty %}
+      <{{ footer_wrapper }}{{ footer_attributes.addClass('ds-footer') }}>
+        {{ footer }}
+      </{{ footer_wrapper }}>
+      {% endif %}
+    </div>
   {% endif %}
 
-</div>
+  </div>
 </{{ outer_wrapper }}>

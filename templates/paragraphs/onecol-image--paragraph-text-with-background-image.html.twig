@@ -12,27 +12,27 @@
 <div class="inner">
 
   {% if not image_empty %}
-  <{{ image_wrapper }}{{ image_attributes.addClass('image-wrapper') }}>
-  {{ image }}
-</{{ image_wrapper }}>
-<div class="content-wrapper">
-<div class="content-inner">
-  {% if not header_empty %}
-  <{{ header_wrapper }}{{ header_attributes.addClass('ds-header') }}>
-  {{ header }}
-</{{ header_wrapper }}>
-{% endif %}
+    <{{ image_wrapper }}{{ image_attributes.addClass('image-wrapper') }}>
+    {{ image }}
+  </{{ image_wrapper }}>
+  <div class="content-wrapper">
+    <div class="content-inner">
+    {% if not header_empty %}
+    <{{ header_wrapper }}{{ header_attributes.addClass('ds-header') }}>
+    {{ header }}
+  </{{ header_wrapper }}>
+  {% endif %}
   {% if not column_1_empty %}
   <{{ column_1_wrapper }}{{ column_1_attributes.addClass('ds-content') }}>
   {{ column_1 }}
-  </{{ column_1_wrapper }}>
+</{{ column_1_wrapper }}>
   {% endif %}
         {% if not footer_empty %}
           <{{ footer_wrapper }}{{ footer_attributes.addClass('ds-footer') }}>
           {{ footer }}
           </{{ footer_wrapper }}>
         {% endif %}
-  </div>
+    </div>
   </div>
 
 {% else %}

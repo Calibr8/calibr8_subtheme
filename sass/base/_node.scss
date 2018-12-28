@@ -1,9 +1,11 @@
+
 // Node
 // --------------------------------------------------
 
 .node {
   position: relative;
 }
+
 .node--onclick {
   cursor: pointer;
   &,
@@ -19,6 +21,7 @@
     }
   }
 }
+
 // Labels
 // --------------------------------------------------
 
@@ -38,12 +41,15 @@ span.field-label {
     display: inline-block;
   }
 }
+
+
 // Fields
 // --------------------------------------------------
 
 .field--title + .field--subtitle {
   margin-top: -1rem;
 }
+
 .field--date {
   @include font-size(14);
   color: $color-muted;
@@ -51,23 +57,28 @@ span.field-label {
     margin-right: 0.5rem;
   }
 }
+
 .field--body {
   a {
     @extend .inline-link;
   }
 }
+
 .field--node-link {
   a {
     @extend .read-more;
   }
 }
+
 .field--more-link {
   a {
     @extend .read-more;
   }
 }
+
 // Field groups
 // --------------------------------------------------
+
 
 // View modes
 // --------------------------------------------------
@@ -77,16 +88,19 @@ span.field-label {
 .node--list {
   margin-bottom: $default-block-margin-bottom;
 }
+
 // Search result
 
 .node--search-result {
   margin-bottom: $default-block-margin-bottom;
 }
+
 // Teaser
 
 .node--teaser {
   margin-bottom: $default-block-margin-bottom;
 }
+
 // Full
 
 .node--full {

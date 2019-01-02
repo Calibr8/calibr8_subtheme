@@ -1,8 +1,9 @@
 
+
 // Fonts
 // --------------------------------------------------
 
-@import '../../../calibr8_theme/sass/base/fonts';
+@import "../../../calibr8_theme/sass/base/fonts";
 
 // Font weights; more info at https://www.w3.org/TR/css-fonts-3/
 // 100 - Thin
@@ -16,7 +17,7 @@
 // 900 - Black (Heavy)
 
 // ICON FONT
-@include font-face('icons', normal, normal, 'icons', $icon-font-token);
+@include font-face("icons", normal, normal, "icons", $icon-font-token);
 
 // FROM GOOGLE FONTS
 @import url(https://fonts.googleapis.com/css?family=Lato:400,100,200,300,500,600,700,800,900);

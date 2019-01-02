@@ -1,31 +1,31 @@
 
+
 // WYSIWYG
 // --------------------------------------------------
 
 // CONFIG
 
-@import 'config/icons';
-@import 'config/mixins';
-@import 'config/settings';
+@import "config/icons";
+@import "config/mixins";
+@import "config/settings";
 
 // Document settings
 
 body {
+  color: $color-text;
   font-family: $default-font;
+  @include font-size($default-font-size);
+  @include font-smoothing(antialiased);
   font-weight: 400;
   line-height: 1.6;
-  color: $color-text;
-  @include font-smoothing(antialiased);
   font-variant-ligatures: none; // turn off ligatures
-  @include font-size($default-font-size);
 }
 
 // BASE
 
-@import 'base/fonts';
-@import 'base/classes';
-
-@import 'base/typography';
-@import 'base/buttons';
+@import "base/fonts";
+@import "base/classes";
+@import "base/typography";
+@import "base/buttons";
 
 // COMPONENTS

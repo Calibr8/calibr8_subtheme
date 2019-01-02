@@ -1,12 +1,12 @@
 
-//
+
 // Icons
-// ----------------------------------------------------
+// --------------------------------------------------
 
 // Import config and variables
-@import 'config/icons';
-@import 'config/mixins';
-@import 'config/settings';
+@import "config/icons";
+@import "config/mixins";
+@import "config/settings";
 
 // INCLUDE ICON FONT
-@include font-face('icons', normal, normal, 'icons', $icon-font-token);
+@include font-face("icons", normal, normal, "icons", $icon-font-token);

@@ -9,6 +9,7 @@ $paragraph-spacing-md: 3rem;
   position: relative;
   padding-top: $paragraph-spacing-sm;
   padding-bottom: $paragraph-spacing-sm;
+
   @include bp(md) {
     padding-top: $paragraph-spacing-md;
     padding-bottom: $paragraph-spacing-md;
@@ -21,7 +22,7 @@ $paragraph-spacing-md: 3rem;
 // Body
 .paragraph {
   .field--type-text-long {
-    > *:last-child {
+     > *:last-child {
       margin-bottom: 0;
     }
   }
@@ -39,7 +40,7 @@ $paragraph-spacing-md: 3rem;
 
 // Header
 .paragraph {
-  > .inner > header {
+   > .inner > header {
     margin-bottom: 2rem;
   }
 }
@@ -49,11 +50,11 @@ $paragraph-spacing-md: 3rem;
 
 // Width
 .paragraph.width--small {
-  > .inner {
+   > .inner {
     @include bp(md) {
+      max-width: cols-width(8);
       margin: auto;
       padding: 0 ($gutter / 4); // mysterious fix
-      max-width: cols-width(8);
     }
     @include bp(lg) {
       // width: cols-width(8);
@@ -63,29 +64,31 @@ $paragraph-spacing-md: 3rem;
     }
   }
 }
+
 .paragraph.width--medium {
-  > .inner {
+   > .inner {
     @include bp(md) {
+      max-width: cols-width(10);
       margin: auto;
       padding: 0 ($gutter / 4); // mysterious fix
-      max-width: cols-width(10);
     }
     @include bp(lg) {
       max-width: cols-width(8);
     }
   }
 }
+
 .paragraph.width--large {
-  > .inner {
+   > .inner {
     @include bp(lg) {
+      width: cols-width(10);
       margin: auto;
       padding: 0 ($gutter / 4); // mysterious fix
-      width: cols-width(10);
     }
   }
 }
-.paragraph.width--full {
 
+.paragraph.width--full {
 }
 
 // Background color
@@ -93,10 +96,12 @@ $paragraph-spacing-md: 3rem;
   @extend .extendfull;
   background-color: $color-grey;
 }
+
 .paragraph.background--primary {
   @extend .extendfull;
   background-color: $color-primary;
 }
+
 .paragraph.background--secondary {
   @extend .extendfull;
   background-color: $color-secondary;
@@ -107,6 +112,7 @@ $paragraph-spacing-md: 3rem;
   @extend .extendfull;
   border-top: $default-border;
 }
+
 .paragraph.border--bottom {
   @extend .extendfull;
   border-bottom: $default-border;
@@ -114,23 +120,26 @@ $paragraph-spacing-md: 3rem;
 
 // Title align
 .paragraph.title-align--left {
-
 }
+
 .paragraph.title-align--center {
   .field--title,
   .field--subtitle {
     text-align: center;
   }
+
   .node .field--title,
   .node .field--subtitle {
     text-align: inherit;
   }
 }
+
 .paragraph.title-align--right {
   .field--title,
   .field--subtitle {
     text-align: right;
   }
+
   .node .field--title,
   .node .field--subtitle {
     text-align: inherit;
@@ -139,14 +148,15 @@ $paragraph-spacing-md: 3rem;
 
 // Text align
 .paragraph.text-align--left {
-
 }
+
 .paragraph.text-align--center {
   .field--text,
   .field--call-to-action {
     text-align: center;
   }
 }
+
 .paragraph.text-align--right {
   .field--text,
   .field--call-to-action {
@@ -167,16 +177,19 @@ $paragraph-spacing-md: 3rem;
     background-color: $color-white;
   }
 }
+
 .paragraph.text-background--white-transparent {
   .content-inner {
     background-color: rgba($color-white, 0.5);
   }
 }
+
 .paragraph.text-background--black {
   .content-inner {
     background-color: $color-black;
   }
 }
+
 .paragraph.text-background--black-transparent {
   .content-inner {
     background-color: rgba($color-black, 0.5);
@@ -201,6 +214,7 @@ $paragraph-spacing-md: 3rem;
 
 // PARAGRAPH STYLE: Text with image
 // --------------------------------------------------
+
 .paragraph--text-with-image {
   .field--image {
     @include bp(md) {
@@ -211,77 +225,90 @@ $paragraph-spacing-md: 3rem;
 
 // PARAGRAPH STYLE: Text with background image
 // --------------------------------------------------
+
 .paragraph--text-with-background-image {
   padding-top: 0;
   padding-bottom: 0;
-  > .inner {
+
+   > .inner {
     position: relative;
     max-width: $max-site-width;
   }
+
   .field--image {
     img {
       display: block;
       width: 100%;
     }
   }
+
   .content-wrapper {
     position: absolute;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
+
     @include bp(md) {
-      padding: 0 ($gutter / 4); // mysterious fix
       width: cols-width(8);
+      padding: 0 ($gutter / 4); // mysterious fix
     }
     @include bp(lg) {
-      padding: 0 ($gutter / 4); // mysterious fix
       width: cols-width(6);
+      padding: 0 ($gutter / 4); // mysterious fix
     }
   }
+
   .content-inner {
     padding: 1rem;
   }
+
   h1.field--title {
     margin-bottom: 1rem;
   }
 }
+
 .paragraph--text-with-background-image--content-align-center {
   .content-wrapper {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
   }
 }
+
 .paragraph--text-with-background-image--content-align-right {
   .content-wrapper {
-    left: auto;
     right: 0;
+    left: auto;
   }
 }
 
 // PARAGRAPH STYLE: Form
 // --------------------------------------------------
-.paragraph--form {
 
+.paragraph--form {
 }
 
 // PARAGRAPH STYLE: Columns
 // --------------------------------------------------
+
 .paragraph--columns {
   .paragraph {
     padding-top: 0;
     padding-bottom: 0;
   }
+
   .col:not(:last-child) /* .paragraph */ {
     @include bp(md, max) {
       margin-bottom: 2rem;
     }
   }
+
   .field--call-to-action {
     .field__item,
     .button {
       width: 100%;
     }
   }
+
   .paragraph--text-with-image-teaser {
     @include bp(md) {
       margin-bottom: 0 !important;

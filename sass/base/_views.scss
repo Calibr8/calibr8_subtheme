@@ -1,4 +1,5 @@
 
+
 // Views
 // --------------------------------------------------
 
@@ -25,6 +26,7 @@
 
 .view-empty {
   @extend .messages;
+
   p {
     margin-bottom: 0;
   }

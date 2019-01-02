@@ -1,8 +1,9 @@
 
+
 // Typography
 // --------------------------------------------------
 
-@import '../../../calibr8_theme/sass/base/typography';
+@import "../../../calibr8_theme/sass/base/typography";
 
 // Spacing
 
@@ -13,18 +14,20 @@ pre, blockquote, dl, figure, table, p, ul, ol, form {
 // Headings
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $title-font;
-  font-weight: 700;
   margin-top: 0;
   margin-bottom: 1rem;
+  font-family: $title-font;
+  font-weight: 700;
+
   a {
     color: inherit;
   }
 }
 
 h1 {
-  @include font-size(24);
   margin-bottom: 2rem;
+  @include font-size(24);
+
   @include bp(md) {
     @include font-size(36);
   }
@@ -36,6 +39,7 @@ h1 {
 h2 {
   @include font-size(24);
   font-weight: 600;
+
   @include bp(md) {
     @include font-size(30);
   }
@@ -47,6 +51,7 @@ h2 {
 h3 {
   @include font-size(18);
   font-weight: 500;
+
   @include bp(md) {
     @include font-size(20);
   }
@@ -58,6 +63,7 @@ h3 {
 h4 {
   @include font-size(16);
   font-weight: 500;
+
   @include bp(lg) {
     @include font-size(18);
   }
@@ -78,10 +84,10 @@ p {
 }
 
 .lead {
+  max-width: 600px;
+  margin-bottom: 2rem;
   @include font-size(18);
   font-weight: 600;
-  margin-bottom: 2rem;
-  max-width: 600px;
 }
 
 .muted {
@@ -93,47 +99,51 @@ p {
 }
 
 .description {
-  @include font-size(12);
   color: $color-muted;
+  @include font-size(12);
 }
 
 .caption {
-  @include font-size(12);
-  color: $color-muted;
-  padding-left: 1rem;
   padding-right: 1rem;
+  padding-left: 1rem;
+  color: $color-muted;
+  @include font-size(12);
   font-style: italic;
 }
 
 a {
-  color: $color-link;
-  text-decoration: none;
   transition: $default-transition;
+  text-decoration: none;
+  color: $color-link;
+
   &:hover {
-    color: $color-link-hover;
     text-decoration: none;
+    color: $color-link-hover;
   }
 }
 
 a.inline-link {
-  color: $color-text;
-  font-weight: 600;
-  border-bottom: solid 1px $color-link;
   word-wrap: break-word;
+  color: $color-text;
+  border-bottom: solid 1px $color-link;
+  font-weight: 600;
+
   &:hover {
     color: $color-link-hover;
     border-color: $color-link-hover;
   }
 }
 
-p, a {
-  &[class^='icon-']:before,
-  &[class*=' icon-']:before {
+p,
+a {
+  &[class^="icon-"]:before,
+  &[class*=" icon-"]:before {
     margin-right: 0.4rem;
     text-decoration: none;
   }
-  &[class^='icon-']:after,
-  &[class*=' icon-']:after {
+
+  &[class^="icon-"]:after,
+  &[class*=" icon-"]:after {
     margin-left: 0.4rem;
     text-decoration: none;
   }
@@ -149,16 +159,18 @@ label {
 
 .pill {
   display: inline-block;
-  margin: 0rem .3rem .3rem 0rem;
+  margin: 0rem 0.3rem 0.3rem 0rem;
   padding: 0.2rem 0.5rem;
+  color: $color-text;
   border-radius: 4px;
   background: $color-grey;
-  color: $color-text;
+
   &:before {
-    text-decoration: none;
     margin-right: 0.5rem;
+    text-decoration: none;
   }
 }
+
 a.pill:hover {
   color: $color-white;
   background-color: $color-link-hover;
@@ -168,13 +180,16 @@ a.pill:hover {
   color: $color-white;
   background-color: $color-primary;
 }
+
 a.pill-primary:hover {
   background-color: $color-link-hover;
 }
+
 .pill-secondary {
   color: $color-text;
   background-color: $color-secondary;
 }
+
 a.pill-secondary:hover {
   background-color: $color-link-hover;
 }
@@ -183,40 +198,46 @@ a.pill-secondary:hover {
 
 dl {
   margin-bottom: 1rem;
+
   dt {
     font-weight: 600;
   }
+
   dd {
     margin-left: 2rem;
   }
 }
+
 dl.dl-horizontal {
   @include bp(sm) {
     dt {
       float: left;
-      overflow: hidden;
       clear: left;
-      text-align: left;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      overflow: hidden;
       width: 10rem;
+      text-align: left;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
+
     dd {
       margin-left: 10rem + 1;
     }
   }
 }
+
 dl.dl-horizontal-narrow {
   @include bp(sm) {
     dt {
       float: left;
-      overflow: hidden;
       clear: left;
-      text-align: left;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      overflow: hidden;
       width: 6rem;
+      text-align: left;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
+
     dd {
       margin-left: 6rem + 1;
     }
@@ -227,12 +248,13 @@ dl.dl-horizontal-narrow {
 
 a.read-more {
   font-weight: 600;
-  // @include icon('arrow-right', after);
+  @include icon("arrow-right", after);
+
   &:after {
-    @include font-size(14);
-    color: $color-text;
     margin-left: 0.4rem;
     text-decoration: none;
+    color: $color-text;
+    @include font-size(14);
   }
 }
 
@@ -240,9 +262,10 @@ a.read-more {
 
 ul,
 ol {
-  padding-left: 0;
   margin-top: 0;
   margin-left: 1.5rem;
+  padding-left: 0;
+
   li {
     margin-bottom: 0.5rem;
   }
@@ -257,14 +280,16 @@ ol {
 }
 
 ul {
-  ul, ol {
+  ul,
+  ol {
     margin: 1.5rem 0 1.5rem 3rem;
     font-size: 90%;
   }
 }
 
 ol {
-  ol, ul {
+  ol,
+  ul {
     margin: 1.5rem 0 1.5rem 3rem;
     font-size: 90%;
   }
@@ -274,6 +299,7 @@ ul.list-check,
 ul.list-plus,
 ul.list-minus {
   list-style: none;
+
   li:before {
     float: left;
     margin-top: 0.2rem;
@@ -283,19 +309,19 @@ ul.list-minus {
 
 ul.list-check {
   li {
-    @include icon('check');
+    @include icon("check");
   }
 }
 
 ul.list-plus {
   li {
-    @include icon('circle-plus');
+    @include icon("circle-plus");
   }
 }
 
 ul.list-minus {
   li {
-    @include icon('circle-minus');
+    @include icon("circle-minus");
   }
 }
 
@@ -305,6 +331,7 @@ table {
   max-width: 100%;
   border-collapse: collapse;
 }
+
 table.responsive {
   display: block;
   overflow-x: auto;
@@ -316,10 +343,11 @@ table.full-width {
 }
 
 th {
-    font-weight: 600;
+  font-weight: 600;
 }
 
-th, td {
+th,
+td {
   padding: 0.75rem 1rem;
   text-align: left;
   vertical-align: top;
@@ -333,6 +361,7 @@ table.vline td {
 
 table.striped {
   background-color: $color-white;
+
   tbody > tr:nth-child(odd) > td,
   tbody > tr:nth-child(odd) > th {
     background-color: $color-grey;
@@ -340,13 +369,16 @@ table.striped {
 }
 
 table.row-links tbody {
-  th, td {
+  th,
+  td {
     transition: background-color $default-transition, color $default-transition;
   }
-  tr:hover th, tr:hover td {
+
+  tr:hover th,
+  tr:hover td {
+    cursor: pointer;
     color: $color-link-hover;
     background-color: lighten($color-link-hover, 50%);
-    cursor: pointer;
   }
 }
 
@@ -360,20 +392,24 @@ blockquote {
   margin: 2rem 0 2rem 0;
   padding: 0 0 0 1rem;
   border-left: solid 3px $color-primary;
+
   > p {
+    margin-bottom: 0;
     @include font-size(18);
     font-weight: 700;
-    margin-bottom: 0;
   }
+
   .small {
     margin-top: 0.5rem;
     color: $color-muted;
+
     &:before {
-      content: '\2014 \00A0';
+      content: "\2014 \00A0";
     }
   }
+
   @include bp(md) {
-    p {
+    > p {
       @include font-size(24);
     }
   }
@@ -391,6 +427,7 @@ img {
   float: left;
   margin-right: 1rem;
   margin-bottom: 1rem;
+
   &.float-right {
     float: right;
     margin-right: 0rem;
@@ -402,9 +439,10 @@ img {
 
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; // 16:9
-  height: 0;
   overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%; // 16:9
+
   iframe,
   object,
   embed {

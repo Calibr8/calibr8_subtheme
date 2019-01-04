@@ -1,0 +1,12 @@
+
+
+// Cookie compliance
+// --------------------------------------------------
+
+@import "../../../calibr8_theme/sass/components/cookie_compliance";
+
+.calibr8-cookie-compliance-info {
+  border-top: $default-border;
+  background: $color-white;
+  box-shadow: 0 -3px 0 3px rgba($color-black, 0.03);
+}
